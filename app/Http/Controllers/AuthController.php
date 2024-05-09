@@ -260,13 +260,13 @@ class AuthController extends Controller
 
             $data = User::where('npm', $request->npm)->first();
 
-            // $matkul = Jadwal_Mhsw::where('npm', $data->npm)->get();
+            $matkul = Jadwal_Mhsw::where('npm', $data->npm)->get();
 
             return response()->json([
                 'success' => true,
                 'message' => 'Berhasil Login',
                 'account' => $data,
-                // 'matkul' => $matkul->count(),
+                'matkul' => $matkul->count(),
 
             ], 200);
         } catch (Exception $e) {
