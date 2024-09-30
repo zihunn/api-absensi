@@ -171,8 +171,8 @@ class PerizinanController extends Controller
         $krs_id = $request->krs_id;
 
         $dosen_primary = jadwal::where('JadwalID', $jadwal_id)->pluck('DosenID');
-        // $dosen_secondary = jadwaldosen::where('JadwalID', $jadwal_id)->pluck('DosenID');
-        $dosen_secondary = '';
+        $dosen_secondary = jadwaldosen::where('JadwalID', $jadwal_id)->pluck('DosenID');
+        // $dosen_secondary = '';
 
         $created_at = Carbon::now();
 
